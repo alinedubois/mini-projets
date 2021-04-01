@@ -1,0 +1,20 @@
+.conteneur-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.hauteur-ecran {
+    height: 95vh;
+}
+
+.conteneur-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+
