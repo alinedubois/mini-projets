@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.conteneur-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.hauteur-ecran {
+  height: 95vh;
+}
+
+.conteneur-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+
+.picto {
+  height: 50px;
+  width: 50px;
+}
+
+.ListeRaccourcis{
+  margin-top: 10px;
+}
