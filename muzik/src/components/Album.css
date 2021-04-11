@@ -1,0 +1,14 @@
+.conteneur-vertical{
+    display: flex;
+    flex-direction: column;
+}
+
+.conteneur-horizontal{
+    display: flex;
+    flex-direction: row;
+}
+
+.pochette{
+    width: 200px;
+    height: 200px;
+}

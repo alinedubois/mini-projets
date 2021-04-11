@@ -22,8 +22,9 @@ import {Raccourci} from "./Raccourci";
         ];
         return (
             <div className="conteneur-horizontal ListeRaccourcis">
-                {liste.map (function (raccourci){
+                {liste.map (function (raccourci,index){
                     return <Raccourci
+                        key={index}
                         picto={raccourci.picto}
                         titre={raccourci.titre}
                         lien={raccourci.lien}/>
