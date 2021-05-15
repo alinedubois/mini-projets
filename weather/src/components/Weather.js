@@ -29,7 +29,7 @@ export const Weather = () => {
 
                     <TextField id="standard-basic"
                                label="Ville recherchée"
-                               autoComplete={false}
+                               autoComplete="false"
                                value={villeRecherchee}
                                onChange={(event => setVilleRecherchee(event.target.value))}/>
 

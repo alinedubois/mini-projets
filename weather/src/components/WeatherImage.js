@@ -4,7 +4,7 @@ export const WeatherImage = ({description}) => {
     if (weatherDescription?.includes('storm')) {
         image = 'bolt';
     } else if (weatherDescription?.includes('shower')) {
-        image = 'cloud-shower-heavy';
+        image = 'cloud-showers-heavy';
     } else if (weatherDescription?.includes('rain') || weatherDescription?.includes('drizzle')) {
         image = 'cloud-rain';
     } else if (weatherDescription?.includes('cloudy')) {
