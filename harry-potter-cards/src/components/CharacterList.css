@@ -1,0 +1,10 @@
+.CharacterList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.title-page {
+    color: rgba(255,194,38,0.69);
+}
