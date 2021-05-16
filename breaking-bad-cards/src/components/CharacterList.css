@@ -1,0 +1,12 @@
+.CharacterList {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.characterList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
