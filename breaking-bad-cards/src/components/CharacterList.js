@@ -21,7 +21,12 @@ export const CharacterList = () => {
     return (
 
         <div className="characterList">
-            <h1 className="BB-casting">Breaking Bad</h1>
+            <div className="BB-casting">
+                <div className="debut-mot">Br</div>
+                <div className="mot">eaking&#160;</div>
+                <div className="debut-mot">Ba</div>
+                <div className="mot">d</div>
+            </div>
             <div className="CharacterList">
                 {isLoading === true ? <CircularProgress/> :
                     characters.map((character, index) =>

@@ -10,3 +10,19 @@
     flex-direction: column;
     align-items: center;
 }
+
+.BB-casting {
+    font-family: 'Merriweather', serif;
+    display: flex;
+    font-size: 50px;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.debut-mot {
+    background-color: #075d2e;
+    padding-left: 6px;
+    padding-right: 6px;
+}
