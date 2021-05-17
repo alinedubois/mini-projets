@@ -1,0 +1,17 @@
+.Movies-list {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 70px;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 50px;
+
+}
