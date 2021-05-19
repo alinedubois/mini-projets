@@ -1,7 +1,7 @@
 // https://www.breakingbadapi.com/api/characters
 import "./CharacterList.css";
 import {useEffect, useState} from "react";
-import {CircularProgress} from "@material-ui/core";
+import {CircularProgress, TextField} from "@material-ui/core";
 import {Character} from "./Character";
 
 
@@ -9,6 +9,7 @@ export const CharacterList = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [characters, setCharacters] = useState([]);
+    const [recherche, setRecherche] = useState("");
 
     useEffect(() => {
         fetch("https://www.breakingbadapi.com/api/characters")
@@ -27,19 +28,42 @@ export const CharacterList = () => {
                 <div className="debut-mot">Ba</div>
                 <div className="mot">d</div>
             </div>
+
+            <TextField label="Recherche"
+                       value={recherche}
+                       onChange={(event) => setRecherche(event.target.value)}
+            />
+
             <div className="CharacterList">
-                {isLoading === true ? <CircularProgress/> :
-                    characters.map((character, index) =>
-                        <Character
-                            key={index}
-                            name={character.name}
-                            img={character.img}
-                            birthday={character.birthday}
-                            nickname={character.nickname}
-                            portrayed={character.portrayed}
-                            status={character.status}
-                        />
-                    )
+                {isLoading === true ? <CircularProgress/> : (recherche !== "" ?
+                        characters
+                            .filter((character) => character.name.toLowerCase().includes(recherche.toLowerCase()))
+                            .map((character, index) =>
+                                <Character
+                                    key={index}
+                                    name={character.name}
+                                    img={character.img}
+                                    birthday={character.birthday}
+                                    nickname={character.nickname}
+                                    portrayed={character.portrayed}
+                                    status={character.status}
+                                />
+                            ) :
+                        characters
+
+                            .map((character, index) =>
+                                <Character
+                                    key={index}
+                                    name={character.name}
+                                    img={character.img}
+                                    birthday={character.birthday}
+                                    nickname={character.nickname}
+                                    portrayed={character.portrayed}
+                                    status={character.status}
+                                />
+                            )
+                )
+
                 }
             </div>
 
