@@ -1,10 +1,16 @@
+.proposition-films {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .Movies-list {
     display: flex;
     justify-content: center;
     color: white;
     font-size: 70px;
     font-family: 'Orbitron', sans-serif;
-
+    margin-top: 50px;
 }
 
 .movies-list {
@@ -13,5 +19,9 @@
     gap: 50px;
     justify-content: center;
     margin-top: 50px;
+}
+
+.champ-recherche {
+    display: flex;
 
 }
