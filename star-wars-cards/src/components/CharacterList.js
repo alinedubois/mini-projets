@@ -4,6 +4,7 @@ import "./CharacterList.css";
 import {useEffect, useState} from "react";
 import {CircularProgress, TextField} from "@material-ui/core";
 import {Character} from "./Character";
+import ClearIcon from '@material-ui/icons/Clear';
 
 export const CharacterList = () => {
 
@@ -25,10 +26,19 @@ export const CharacterList = () => {
         <div className="liste-personnages">
             <div className="characterList"> STAR WARS</div>
 
-            <TextField label="Recherche"
-                       value={recherche}
-                       onChange={(event) => setRecherche(event.target.value)}
-            />
+            <div className="gestion-recherche">
+
+                <TextField label="Recherche"
+                           value={recherche}
+                           onChange={(event) => setRecherche(event.target.value)}
+                />
+
+                {recherche !== "" &&  <ClearIcon className="clear-button"
+
+                    onClick={() => setRecherche("")}
+                />}
+
+            </div>
 
             <div className="star-wars">
                 {isLoading === true ? <CircularProgress/> : (recherche !== "" ?
