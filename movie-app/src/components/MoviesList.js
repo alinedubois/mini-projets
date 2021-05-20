@@ -8,6 +8,8 @@ import "./MoviesList.css";
 import {useEffect, useState} from "react";
 import {CircularProgress, TextField} from "@material-ui/core";
 import {Movie} from "./Movie";
+import ClearIcon from '@material-ui/icons/Clear';
+
 
 export const MoviesList = () => {
 
@@ -28,10 +30,20 @@ export const MoviesList = () => {
 
             <div className="Movies-list">Films bientôt sur vos écrans...</div>
 
-            <TextField label="Recherche"
-                       value={recherche}
-                       onChange={(event) => setRecherche(event.target.value)}
-            />
+            <div className="gestion-recherche">
+
+                <TextField label="Recherche"
+                           value={recherche}
+                           onChange={(event) => setRecherche(event.target.value)}
+                />
+
+                {recherche !== "" &&  <ClearIcon
+
+                    onClick={() => setRecherche("")}
+                />}
+
+            </div>
+
 
             <div className="movies-list">
 
