@@ -9,3 +9,10 @@
 .title-page {
     color: rgba(255,194,38,0.69);
 }
+
+.gestion-recherche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
