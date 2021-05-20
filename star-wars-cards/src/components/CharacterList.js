@@ -2,13 +2,14 @@
 
 import "./CharacterList.css";
 import {useEffect, useState} from "react";
-import {CircularProgress} from "@material-ui/core";
+import {CircularProgress, TextField} from "@material-ui/core";
 import {Character} from "./Character";
 
 export const CharacterList = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [characterList, setCharacterList] = useState([]);
+    const [recherche, setRecherche] = useState("");
 
     useEffect(() => {
 
@@ -21,21 +22,41 @@ export const CharacterList = () => {
 
 
     return (
-        <>
+        <div className="liste-personnages">
             <div className="characterList"> STAR WARS</div>
+
+            <TextField label="Recherche"
+                       value={recherche}
+                       onChange={(event) => setRecherche(event.target.value)}
+            />
+
             <div className="star-wars">
-                {isLoading === true ? <CircularProgress/> :
-                    characterList.map((character, index) => <Character
-                            name={character.name}
-                            image={character.image}
-                            key={index}
-                            height={character.height}
-                            homeworld={character.homeworld}
-                            species={character.species}
-                        />
-                    )
+                {isLoading === true ? <CircularProgress/> : (recherche !== "" ?
+
+                        characterList
+                            .filter((character) => character.name.toUpperCase().includes(recherche.toUpperCase()))
+                            .map((character, index) => <Character
+                                    name={character.name}
+                                    image={character.image}
+                                    key={index}
+                                    height={character.height}
+                                    homeworld={character.homeworld}
+                                    species={character.species}
+                                />
+                            ) :
+                        characterList
+                            .map((character, index) => <Character
+                                    name={character.name}
+                                    image={character.image}
+                                    key={index}
+                                    height={character.height}
+                                    homeworld={character.homeworld}
+                                    species={character.species}
+                                />
+                            )
+                )
                 }
             </div>
-        </>
+        </div>
     )
 }
