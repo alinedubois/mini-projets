@@ -6,7 +6,7 @@
 import "./MoviesList.css";
 
 import {useEffect, useState} from "react";
-import {CircularProgress, TextField} from "@material-ui/core";
+import {Button, CircularProgress, TextField} from "@material-ui/core";
 import {Movie} from "./Movie";
 import ClearIcon from '@material-ui/icons/Clear';
 
@@ -41,6 +41,10 @@ export const MoviesList = () => {
 
                     onClick={() => setRecherche("")}
                 />}
+
+                {recherche !== "maya the bee" &&  <Button variant={'contained'} onClick={() => setRecherche("maya the bee")}>
+                    Rechercher Maya l'abeille
+                </Button>}
 
             </div>
 
