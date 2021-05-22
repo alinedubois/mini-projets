@@ -1,7 +1,7 @@
 // http://hp-api.herokuapp.com/api/characters
 import "./CharacterList.css";
 import {useEffect, useState} from "react";
-import {CircularProgress, TextField} from "@material-ui/core";
+import {Button, CircularProgress, TextField} from "@material-ui/core";
 import {Character} from "./Character";
 import ClearIcon from '@material-ui/icons/Clear';
 
@@ -34,6 +34,11 @@ export const CharacterList = () => {
 
                     onClick={() => setRecherche("")}
                 />}
+
+                {recherche !== "voldemort" && <Button variant={'contained'} onClick={() => setRecherche("voldemort")}>
+                    Rechercher Voldemort
+                    </Button>
+                    }
 
             </div>
 
