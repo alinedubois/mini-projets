@@ -2,7 +2,7 @@
 
 import "./CharacterList.css";
 import {useEffect, useState} from "react";
-import {CircularProgress, TextField} from "@material-ui/core";
+import {Button, CircularProgress, TextField} from "@material-ui/core";
 import {Character} from "./Character";
 import ClearIcon from '@material-ui/icons/Clear';
 
@@ -38,6 +38,10 @@ export const CharacterList = () => {
                     onClick={() => setRecherche("")}
                 />}
 
+                {recherche !== "chewbacca" &&  <Button variant={'contained'} onClick={() => setRecherche("chewbacca")}>
+                    Rechercher Chewbacca
+                </Button>
+                    }
             </div>
 
             <div className="star-wars">
