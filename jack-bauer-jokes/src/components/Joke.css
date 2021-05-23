@@ -18,10 +18,12 @@
 }
 
 .joke {
-    color: white;
+    color: #f7d78b;
     font-size: 30px;
     margin-bottom: 30px;
     font-family: 'Iceland', cursive;
+    text-align: center;
+
 
 }
 
